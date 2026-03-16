@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cowrie Bioenergy Advisors — Unlocking Maximum Value from Feedstock to Pipeline</title>
+<meta name="description" content="Senior advisory and fractional COO services for RNG developers and gas upgrade investors. Food waste, agricultural, and landfill biogas projects.">
+<meta property="og:title" content="Cowrie Bioenergy Advisors">
+<meta property="og:description" content="Unlocking Maximum Value from Feedstock to Pipeline">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── RESET & BASE */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --green-deep:   #057347;
+    --green-brand:  #008651;
+    --green-mid:    #16945D;
+    --green-inner:  #1A9E68;
+    --green-dark:   #046040;
+    --green-shadow: #035230;
+    --gold:         #C9A84C;
+    --gold-light:   #E8D090;
+    --cream:        #F8F6F1;
+    --cream-2:      #F2EFE8;
+    --white:        #FFFFFF;
+    --charcoal:     #1C1C1C;
+    --gray-mid:     #4A4A4A;
+    --gray-light:   #8A8A8A;
+    --gray-rule:    #D8D4CC;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'Jost', 'Segoe UI', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--charcoal);
+    background: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAVIGATION */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 5vw;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,134,81,0.12);
+    transition: box-shadow 0.3s ease;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(5,115,71,0.10); }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .nav-brand .prism { width: 36px; height: auto; flex-shrink: 0; }
+  .nav-brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-brand-name {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 13.5px;
+    letter-spacing: 0.18em;
+    color: var(--green-deep);
+    text-transform: uppercase;
+  }
+  .nav-brand-sub {
+    font-family: var(--font-body);
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--green-brand);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green-brand); }
+
+  .nav-cta {
+    background: var(--green-deep);
+    color: var(--white) !important;
+    padding: 9px 22px;
+    font-size: 11.5px !important;
+    letter-spacing: 0.16em !important;
+  }
+  .nav-cta:hover { background: var(--green-brand); color: var(--white) !important; }
+
+  .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--green-deep); transition: all 0.3s; }
+
+  /* ── HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--green-deep);
+    padding: 72px 0 0;
+  }
+
+  /* Geometric background texture — subtle diagonal lines */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 60px,
+        rgba(255,255,255,0.022) 60px,
+        rgba(255,255,255,0.022) 61px
+      );
+    pointer-events: none;
+  }
+
+  /* Deep shadow circle — bottom right */
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -10%;
+    width: 70vw;
+    height: 70vw;
+    border-radius: 50%;
+    background: rgba(3,82,48,0.45);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .hero-left { max-width: 580px; }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+  .hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+  .hero-eyebrow-text {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(42px, 5.5vw, 72px);
+    line-height: 1.08;
+    color: var(--white);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.35s forwards;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-tagline {
+    font-family: var(--font-body);
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(200,234,216,0.85);
+    margin-bottom: 48px;
+    max-width: 440px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.5s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.65s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(200,234,216,0.85);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--white); }
+  .btn-ghost-arrow { font-size: 16px; transition: transform 0.2s; }
+  .btn-ghost:hover .btn-ghost-arrow { transform: translateX(4px); }
+
+  /* Hero right — large prism mark */
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.4s forwards;
+  }
+  .hero-mark { width: min(320px, 42vw); height: auto; filter: drop-shadow(0 24px 48px rgba(0,0,0,0.3)); }
+
+  /* Hero stats bar */
+  .hero-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    z-index: 3;
+    background: rgba(3,82,48,0.7);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 24px 5vw;
+    display: flex;
+    justify-content: center;
+    gap: clamp(40px, 6vw, 100px);
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.8s forwards;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat-val {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(26px, 3vw, 38px);
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-stat-label {
+    font-family: var(--font-body);
+    font-weight: 200;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    color: rgba(200,234,216,0.7);
+    text-transform: uppercase;
+  }
+  .hero-stat-div { width: 1px; background: rgba(255,255,255,0.12); align-self: stretch; }
+
+  /* ── ABOUT / INTRO */
+  .section-intro {
+    padding: clamp(80px, 10vw, 140px) 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .section-label-line { width: 32px; height: 1px; background: var(--green-brand); }
+  .section-label-text {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--green-brand);
+    text-transform: uppercase;
+  }
+
+  .intro-headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(32px, 3.8vw, 52px);
+    line-height: 1.15;
+    color: var(--green-deep);
+    margin-bottom: 28px;
+  }
+  .intro-headline em { font-style: italic; color: var(--green-brand); }
+
+  .intro-body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--gray-mid);
+    margin-bottom: 20px;
+  }
+
+  .intro-right { padding-top: 60px; }
+
+  .intro-quote {
+    border-left: 2px solid var(--gold);
+    padding: 24px 0 24px 32px;
+    margin-bottom: 40px;
+  }
+  .intro-quote p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.2vw, 26px);
+    line-height: 1.4;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+  }
+  .intro-quote cite {
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--gray-light);
+    text-transform: uppercase;
+  }
+
+  .intro-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .intro-pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--gray-rule);
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .intro-pillar:hover { border-color: var(--green-brand); background: rgba(0,134,81,0.03); }
+  .intro-pillar-icon {
+    width: 8px;
+    height: 8px;
+    background: var(--green-brand);
+    flex-shrink: 0;
+    margin-top: 6px;
+    transform: rotate(45deg);
+  }
+  .intro-pillar-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--green-deep);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .intro-pillar-text {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 13.5px;
+    color: var(--gray-mid);
+    line-height: 1.6;
+  }
+
+  /* ── SERVICES */
+  .section-services {
+    background: var(--cream);
+    padding: clamp(80px, 10vw, 140px) 5vw;
+  }
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+
+  .section-headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(32px, 3.8vw, 52px);
+    line-height: 1.12;
+    color: var(--green-deep);
+  }
+  .section-headline em { font-style: italic; color: var(--green-brand); }
+
+  .section-desc {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--gray-mid);
+    padding-top: 12px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--white);
+    padding: 40px 36px 44px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover { transform: translateY(-4px); }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--green-brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-number {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1;
+    color: rgba(0,134,81,0.10);
+    margin-bottom: 24px;
+    transition: color 0.3s;
+  }
+  .service-card:hover .service-number { color: rgba(0,134,81,0.18); }
+
+  .service-title {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--green-deep);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .service-desc {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gray-mid);
+    margin-bottom: 24px;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .service-list li {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 13px;
+    color: var(--gray-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+  .service-list li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--green-brand);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── FOCUS AREAS */
+  .section-focus {
+    padding: clamp(80px, 10vw, 140px) 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 64px;
+  }
+
+  .focus-item {
+    position: relative;
+    padding: 40px 0 0;
+    border-top: 1px solid var(--gray-rule);
+    transition: border-color 0.25s;
+  }
+  .focus-item:hover { border-color: var(--green-brand); }
+
+  .focus-accent {
+    position: absolute;
+    top: -1px; left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--green-brand);
+    transition: width 0.35s ease;
+  }
+  .focus-item:hover .focus-accent { width: 48px; }
+
+  .focus-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--green-brand);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .focus-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(22px, 2.4vw, 30px);
+    line-height: 1.2;
+    color: var(--green-deep);
+    margin-bottom: 16px;
+  }
+
+  .focus-body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--gray-mid);
+  }
+
+  /* ── WHY COWRIE — DARK SECTION */
+  .section-why {
+    background: var(--green-deep);
+    padding: clamp(80px, 10vw, 140px) 5vw;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-why::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: rgba(3,82,48,0.5);
+    pointer-events: none;
+  }
+
+  .why-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 60px;
+    max-width: 600px;
+  }
+  .why-headline em { font-style: italic; color: var(--gold-light); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-bottom: 72px;
+  }
+
+  .why-item {
+    background: rgba(255,255,255,0.04);
+    padding: 36px;
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .why-item:hover { background: rgba(255,255,255,0.07); border-color: rgba(201,168,76,0.3); }
+
+  .why-item-title {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .why-item-text {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(200,234,216,0.75);
+  }
+
+  /* Cowrie origin story */
+  .cowrie-story {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .cowrie-story-label {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cowrie-story-word {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(36px, 4vw, 56px);
+    color: rgba(255,255,255,0.12);
+    line-height: 1;
+  }
+  .cowrie-story-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.65;
+    color: rgba(200,234,216,0.8);
+  }
+  .cowrie-story-text strong {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--gold-light);
+  }
+
+  /* ── CONTACT */
+  .section-contact {
+    padding: clamp(80px, 10vw, 140px) 5vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-headline {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(32px, 3.8vw, 52px);
+    line-height: 1.12;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+  }
+  .contact-headline em { font-style: italic; color: var(--green-brand); }
+
+  .contact-body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--gray-mid);
+    margin-bottom: 40px;
+  }
+
+  .contact-details { display: flex; flex-direction: column; gap: 18px; }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .contact-item-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(0,134,81,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-item-icon svg { width: 16px; height: 16px; }
+  .contact-item-label {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    color: var(--gray-light);
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .contact-item-val {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 14.5px;
+    color: var(--green-deep);
+  }
+  .contact-item-val a { color: var(--green-brand); text-decoration: none; transition: color 0.2s; }
+  .contact-item-val a:hover { color: var(--green-deep); }
+
+  /* Contact form */
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--green-deep);
+    text-transform: uppercase;
+  }
+  .form-input, .form-textarea, .form-select {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--charcoal);
+    background: var(--white);
+    border: 1px solid var(--gray-rule);
+    padding: 13px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    width: 100%;
+  }
+  .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--green-brand); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    background: var(--green-deep);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: none;
+    padding: 16px 36px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .form-submit:hover { background: var(--green-brand); transform: translateY(-1px); }
+
+  /* ── FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 56px 5vw 36px;
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 32px;
+    gap: 40px;
+  }
+  .footer-brand { display: flex; align-items: center; gap: 14px; }
+  .footer-brand-text { display: flex; flex-direction: column; }
+  .footer-brand-name {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .footer-brand-sub {
+    font-family: var(--font-body);
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .footer-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgba(200,234,216,0.5);
+    max-width: 360px;
+    text-align: right;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-copy {
+    font-family: var(--font-body);
+    font-weight: 200;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em;
+  }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-right { display: none; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; justify-content: space-around; }
+    .section-intro { grid-template-columns: 1fr; gap: 48px; }
+    .intro-right { padding-top: 0; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .focus-grid { grid-template-columns: 1fr 1fr; }
+    .section-header { grid-template-columns: 1fr; gap: 20px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .cowrie-story { grid-template-columns: 1fr; gap: 32px; }
+    .section-contact { grid-template-columns: 1fr; gap: 56px; }
+    .footer-top { flex-direction: column; }
+    .footer-tagline { text-align: left; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 72px; left: 0; right: 0; bottom: 0;
+      background: var(--white);
+      padding: 40px 5vw;
+      gap: 28px;
+      align-items: flex-start;
+      z-index: 99;
+    }
+    .nav-links.open a { font-size: 16px; }
+    .nav-hamburger { display: flex; }
+    .services-grid { grid-template-columns: 1fr; }
+    .focus-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-stats { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV -->
+<nav id="nav">
+  <a href="#" class="nav-brand">
+    <!-- Prism mark SVG inline -->
+    <svg class="prism" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="70,8 10,44 10,116 70,80" fill="#057347"/>
+      <polygon points="70,8 130,44 130,116 70,80" fill="#16945D"/>
+      <polygon points="70,8 130,44 70,80 10,44" fill="#008651"/>
+      <polygon points="70,32 42,48 42,84 70,68" fill="#046040"/>
+      <polygon points="70,32 98,48 98,84 70,68" fill="#0D7A50"/>
+      <polygon points="70,32 98,48 70,68 42,48" fill="#1A9E68"/>
+      <line x1="70" y1="8" x2="10" y2="44" stroke="#3DC882" stroke-width="1.2" stroke-linecap="round" opacity="0.65"/>
+      <line x1="70" y1="8" x2="130" y2="44" stroke="#2ABF75" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/>
+    </svg>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Cowrie Bioenergy</span>
+      <span class="nav-brand-sub">Advisors</span>
+    </div>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#focus">Focus Areas</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+
+  <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Senior Advisory &amp; Fractional COO</span>
+      </div>
+      <h1 class="hero-headline">
+        Unlocking<br>
+        <em>Maximum Value</em><br>
+        from Feedstock<br>to Pipeline
+      </h1>
+      <p class="hero-tagline">
+        We partner with RNG developers and gas upgrade investors to maximize project value across the full development lifecycle — from feedstock assessment through operations.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Start a Conversation</a>
+        <a href="#services" class="btn-ghost">Our Services <span class="btn-ghost-arrow">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Large hero prism mark -->
+      <svg class="hero-mark" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="140,16 20,88 20,232 140,160" fill="#057347"/>
+        <polygon points="140,16 260,88 260,232 140,160" fill="#16945D"/>
+        <polygon points="140,16 260,88 140,160 20,88" fill="#008651"/>
+        <polygon points="140,64 84,96 84,168 140,136" fill="#046040"/>
+        <polygon points="140,64 196,96 196,168 140,136" fill="#0D7A50"/>
+        <polygon points="140,64 196,96 140,136 84,96" fill="#1A9E68"/>
+        <line x1="140" y1="16" x2="20" y2="88" stroke="#4DD99A" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+        <line x1="140" y1="16" x2="260" y2="88" stroke="#2FC47A" stroke-width="1.2" stroke-linecap="round" opacity="0.38"/>
+        <!-- Subtle outer glow ring hint -->
+        <polygon points="140,6 10,82 10,242 140,168 270,242 270,82" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val">3</div>
+      <div class="hero-stat-label">Core Feedstock Streams</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">Full-Cycle</div>
+      <div class="hero-stat-label">Pre-FEED to Pipeline</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">Fractional</div>
+      <div class="hero-stat-label">COO Engagement Model</div>
+    </div>
+    <div class="hero-stat-div"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">RNG</div>
+      <div class="hero-stat-label">Pipeline-Grade Biomethane</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT -->
+<section class="section-intro" id="about">
+  <div class="intro-left reveal">
+    <div class="section-label">
+      <div class="section-label-line"></div>
+      <span class="section-label-text">About</span>
+    </div>
+    <h2 class="intro-headline">
+      Senior operators.<br>
+      <em>Not just advisors.</em>
+    </h2>
+    <p class="intro-body">
+      Cowrie Bioenergy Advisors brings fractional COO-level operational leadership to RNG developers and biogas project investors who need execution expertise without the full-time overhead.
+    </p>
+    <p class="intro-body">
+      We specialize in food waste, agricultural, and landfill gas projects — guiding clients from initial feedstock assessment through construction management, commissioning, and into stable, optimized operations.
+    </p>
+    <p class="intro-body">
+      Most consultants deliver a report. We deliver results.
+    </p>
+  </div>
+
+  <div class="intro-right reveal" style="transition-delay: 0.15s;">
+    <div class="intro-quote">
+      <p>"The right operational expertise, at the right time — without the full-time executive overhead."</p>
+      <cite>— Cowrie Bioenergy Advisors</cite>
+    </div>
+    <div class="intro-pillars">
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon"></div>
+        <div>
+          <div class="intro-pillar-label">Development Advisory</div>
+          <div class="intro-pillar-text">Pre-FEED through commissioning — structured, stage-gated project execution</div>
+        </div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon"></div>
+        <div>
+          <div class="intro-pillar-label">Fractional COO</div>
+          <div class="intro-pillar-text">Embedded operational leadership aligned with your project milestones and outcomes</div>
+        </div>
+      </div>
+      <div class="intro-pillar">
+        <div class="intro-pillar-icon"></div>
+        <div>
+          <div class="intro-pillar-label">Investor Support</div>
+          <div class="intro-pillar-text">Independent technical review and project risk assessment for gas upgrade investors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES -->
+<section class="section-services" id="services">
+  <div class="services-inner">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span class="section-label-text">Services</span>
+        </div>
+        <h2 class="section-headline">
+          What we do<br><em>best</em>
+        </h2>
+      </div>
+      <p class="section-desc">
+        Every engagement is structured around your project's stage and specific execution needs — from feasibility through first gas injection.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-number">01</div>
+        <div class="service-title">RNG Project Development</div>
+        <p class="service-desc">End-to-end development advisory from site feasibility and technology selection through permitting, financing, and construction management.</p>
+        <ul class="service-list">
+          <li>Feedstock assessment &amp; procurement strategy</li>
+          <li>Technology selection &amp; vendor evaluation</li>
+          <li>Permitting strategy &amp; regulatory navigation</li>
+          <li>Financing package preparation</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <div class="service-number">02</div>
+        <div class="service-title">Fractional COO Services</div>
+        <p class="service-desc">Senior operational leadership embedded with your team — driving development, optimizing operations, and protecting investor returns.</p>
+        <ul class="service-list">
+          <li>Operations team build-out &amp; training</li>
+          <li>KPI framework development</li>
+          <li>Commissioning &amp; startup management</li>
+          <li>Performance optimization programs</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <div class="service-number">03</div>
+        <div class="service-title">Gas Upgrade Advisory</div>
+        <p class="service-desc">Specialized expertise in biomethane upgrading systems and pipeline injection — the highest-value end of the biogas development spectrum.</p>
+        <ul class="service-list">
+          <li>Upgrade technology evaluation (PSA, membrane, scrubbing)</li>
+          <li>Gas quality optimization</li>
+          <li>Pipeline interconnect strategy</li>
+          <li>RIN &amp; LCFS pathway optimization</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.05s;">
+        <div class="service-number">04</div>
+        <div class="service-title">Investor Due Diligence</div>
+        <p class="service-desc">Independent technical and operational review for investors evaluating biogas or RNG project opportunities, including risk assessment and value optimization.</p>
+        <ul class="service-list">
+          <li>Independent technical review</li>
+          <li>Operational risk assessment</li>
+          <li>Project value optimization analysis</li>
+          <li>Lender technical advisor support</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.15s;">
+        <div class="service-number">05</div>
+        <div class="service-title">Feedstock &amp; Offtake Strategy</div>
+        <p class="service-desc">Feedstock procurement, contract structuring, and offtake agreement advisory to maximize project revenue and reduce operational risk.</p>
+        <ul class="service-list">
+          <li>Feedstock supply chain mapping</li>
+          <li>Tipping fee &amp; contract structuring</li>
+          <li>Offtake agreement negotiation support</li>
+          <li>Carbon intensity (CI) score modeling</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.25s;">
+        <div class="service-number">06</div>
+        <div class="service-title">Operations Optimization</div>
+        <p class="service-desc">Performance audits, process optimization, and operational turnaround for existing digesters and RNG facilities underperforming their potential.</p>
+        <ul class="service-list">
+          <li>Operations performance audit</li>
+          <li>Digester process optimization</li>
+          <li>Advanced technology assessment</li>
+          <li>Team capability development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOCUS AREAS -->
+<section id="focus">
+  <div class="section-focus">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">
+          <div class="section-label-line"></div>
+          <span class="section-label-text">Focus Areas</span>
+        </div>
+        <h2 class="section-headline">Three feedstock streams.<br><em>One integrated approach.</em></h2>
+      </div>
+      <p class="section-desc">Deep operational expertise across the three primary organic waste feedstock categories driving US RNG project development today.</p>
+    </div>
+
+    <div class="focus-grid">
+      <div class="focus-item reveal">
+        <div class="focus-accent"></div>
+        <div class="focus-label">Feedstock 01</div>
+        <h3 class="focus-title">Food Waste</h3>
+        <p class="focus-body">Source-separated organics, grocery and food processing residuals, and restaurant waste streams. Highest biogas yield per ton with strong tipping fee economics. Expertise in de-packaging systems, pre-treatment, and SSO contract structuring.</p>
+      </div>
+
+      <div class="focus-item reveal" style="transition-delay: 0.12s;">
+        <div class="focus-accent"></div>
+        <div class="focus-label">Feedstock 02</div>
+        <h3 class="focus-title">Agricultural</h3>
+        <p class="focus-body">Dairy and livestock manure, crop residuals, and agricultural processing waste for farm-based digester projects. Deep experience with USDA REAP grant programs, co-digestion optimization, and rural utility interconnect requirements.</p>
+      </div>
+
+      <div class="focus-item reveal" style="transition-delay: 0.24s;">
+        <div class="focus-accent"></div>
+        <div class="focus-label">Feedstock 03</div>
+        <h3 class="focus-title">Landfill Gas</h3>
+        <p class="focus-body">LFG collection system evaluation, gas upgrade to pipeline-quality biomethane, and wellfield optimization. EPA LMOP project development expertise and proven D3 RIN and LCFS pathway structuring for maximum credit value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY COWRIE -->
+<section class="section-why" id="why">
+  <div class="why-inner">
+    <h2 class="why-headline reveal">
+      Why <em>Cowrie</em><br>Bioenergy Advisors
+    </h2>
+
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-item-title">Operational Depth</div>
+        <p class="why-item-text">We don't just advise — we operate. Our fractional COO model embeds senior leadership directly into your project team, taking accountability for outcomes not just recommendations.</p>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.1s;">
+        <div class="why-item-title">Multi-Feedstock Fluency</div>
+        <p class="why-item-text">Deep hands-on experience across food waste, agricultural, and landfill gas feedstocks — not a generalist energy firm dabbling in biogas. This is our sole focus.</p>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.05s;">
+        <div class="why-item-title">Gas Upgrade Specialization</div>
+        <p class="why-item-text">Focused expertise in biomethane upgrading systems and pipeline injection — the highest-value, highest-complexity end of the biogas development spectrum.</p>
+      </div>
+      <div class="why-item reveal" style="transition-delay:0.15s;">
+        <div class="why-item-title">Investor-Grade Rigor</div>
+        <p class="why-item-text">We structure projects and advisory engagements to meet the standards of institutional RNG investors and project lenders. Our work product is bankable.</p>
+      </div>
+    </div>
+
+    <div class="cowrie-story reveal">
+      <div>
+        <div class="cowrie-story-label">Our Name</div>
+        <div class="cowrie-story-word">Cowrie</div>
+      </div>
+      <p class="cowrie-story-text">
+        Cowrie shells were <strong>Africa's original currency</strong> — representing wealth creation, trade, and value exchange across continents for centuries. Cowrie Bioenergy Advisors carries that same philosophy forward: <strong>turning organic waste into valuable renewable gas</strong>, creating lasting returns for the developers and investors building the clean energy infrastructure of tomorrow.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT -->
+<section id="contact">
+  <div class="section-contact">
+    <div class="reveal">
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Get in Touch</span>
+      </div>
+      <h2 class="contact-headline">
+        Let's build<br>something<br><em>valuable</em>
+      </h2>
+      <p class="contact-body">
+        Whether you're developing your first RNG project, evaluating a biogas investment, or looking to optimize an existing facility — we'd like to hear about it.
+      </p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#008651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-val"><a href="mailto:contact@cowriebioenergy.com">contact@cowriebioenergy.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#008651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-val">Chicago, Illinois</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#008651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">LinkedIn</div>
+            <div class="contact-item-val"><a href="https://linkedin.com/in/obiofoegbu" target="_blank" rel="noopener">Obi Ofoegbu</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="transition-delay:0.15s;">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First Name</label>
+            <input class="form-input" type="text" id="fname" name="fname" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last Name</label>
+            <input class="form-input" type="text" id="lname" name="lname" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="company">Company / Organization</label>
+          <input class="form-input" type="text" id="company" name="company">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="interest">Area of Interest</label>
+          <select class="form-select" id="interest" name="interest">
+            <option value="">Select one…</option>
+            <option>RNG Project Development</option>
+            <option>Fractional COO Services</option>
+            <option>Gas Upgrade Advisory</option>
+            <option>Investor Due Diligence</option>
+            <option>Feedstock &amp; Offtake Strategy</option>
+            <option>Operations Optimization</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Tell Us About Your Project</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Project stage, feedstock type, location, key challenges…"></textarea>
+        </div>
+        <button class="form-submit" type="submit">Send Message →</button>
+        <div id="form-success" style="display:none; font-family:var(--font-body); font-size:13px; color:var(--green-brand); margin-top:8px; letter-spacing:0.06em;">
+          Thank you — we'll be in touch shortly.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg width="32" height="auto" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="70,8 10,44 10,116 70,80" fill="#057347"/>
+          <polygon points="70,8 130,44 130,116 70,80" fill="#16945D"/>
+          <polygon points="70,8 130,44 70,80 10,44" fill="#008651"/>
+          <polygon points="70,32 42,48 42,84 70,68" fill="#046040"/>
+          <polygon points="70,32 98,48 98,84 70,68" fill="#0D7A50"/>
+          <polygon points="70,32 98,48 70,68 42,48" fill="#1A9E68"/>
+          <line x1="70" y1="8" x2="10" y2="44" stroke="#3DC882" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+        </svg>
+        <div class="footer-brand-text">
+          <span class="footer-brand-name">Cowrie Bioenergy Advisors</span>
+          <span class="footer-brand-sub">cowriebioenergy.com</span>
+        </div>
+      </div>
+      <p class="footer-tagline">Unlocking Maximum Value from Feedstock to Pipeline</p>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Cowrie Bioenergy Advisors LLC. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  // Close nav on link click
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // Scroll reveal
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(function(el) { observer.observe(el); });
+
+  // Form submit (static — hook up to Formspree or Netlify Forms in production)
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(function() {
+      document.getElementById('form-success').style.display = 'none';
+    }, 5000);
+  }
+</script>
+</body>
+</html>
