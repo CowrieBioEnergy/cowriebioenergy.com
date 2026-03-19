@@ -701,12 +701,8 @@
   /* ── CONTACT */
   .section-contact {
     padding: clamp(80px, 10vw, 140px) 5vw;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
   }
 
   .contact-headline {
@@ -728,7 +724,7 @@
     margin-bottom: 40px;
   }
 
-  .contact-details { display: flex; flex-direction: column; gap: 18px; }
+  .contact-details { display: flex; flex-direction: row; gap: 40px; flex-wrap: wrap; }
   .contact-item {
     display: flex;
     align-items: flex-start;
@@ -762,51 +758,41 @@
   .contact-item-val a { color: var(--green-brand); text-decoration: none; transition: color 0.2s; }
   .contact-item-val a:hover { color: var(--green-deep); }
 
-  /* Contact form */
-  .contact-form { display: flex; flex-direction: column; gap: 20px; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-  .form-group { display: flex; flex-direction: column; gap: 8px; }
-  .form-label {
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    color: var(--green-deep);
-    text-transform: uppercase;
+  /* Contact inquiry blurb */
+  .contact-inquiry {
+    margin-top: 40px;
+    padding: 32px 36px;
+    border: 1px solid var(--gray-rule);
+    border-left: 3px solid var(--green-brand);
+    background: rgba(0,134,81,0.03);
   }
-  .form-input, .form-textarea, .form-select {
+  .contact-inquiry-label {
     font-family: var(--font-body);
     font-weight: 300;
-    font-size: 14px;
-    color: var(--charcoal);
-    background: var(--white);
-    border: 1px solid var(--gray-rule);
-    padding: 13px 16px;
-    outline: none;
-    transition: border-color 0.2s;
-    appearance: none;
-    width: 100%;
-  }
-  .form-input:focus, .form-textarea:focus, .form-select:focus { border-color: var(--green-brand); }
-  .form-textarea { resize: vertical; min-height: 120px; }
-
-  .form-submit {
-    background: var(--green-deep);
-    color: var(--white);
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 12px;
-    letter-spacing: 0.18em;
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    color: var(--green-brand);
     text-transform: uppercase;
-    border: none;
-    padding: 16px 36px;
-    cursor: pointer;
-    align-self: flex-start;
-    transition: background 0.25s, transform 0.2s;
+    margin-bottom: 14px;
   }
-  .form-submit:hover { background: var(--green-brand); transform: translateY(-1px); }
+  .contact-inquiry-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.55;
+    color: var(--green-deep);
+  }
+  .contact-inquiry-text a {
+    color: var(--green-brand);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,134,81,0.3);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-inquiry-text a:hover {
+    color: var(--green-deep);
+    border-color: var(--green-deep);
+  }
 
   /* ── FOOTER */
   footer {
@@ -936,7 +922,6 @@
     .nav-hamburger { display: flex; }
     .services-grid { grid-template-columns: 1fr; }
     .focus-grid { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
     .hero-actions { flex-direction: column; align-items: flex-start; }
     .hero-stats { display: none; }
   }
@@ -1287,7 +1272,7 @@
           </div>
           <div>
             <div class="contact-item-label">Email</div>
-            <div class="contact-item-val"><a href="mailto:contact@cowriebioenergy.com">contact@cowriebioenergy.com</a></div>
+            <div class="contact-item-val"><a href="mailto:obi@cowriebioenergy.com">obi@cowriebioenergy.com</a></div>
           </div>
         </div>
         <div class="contact-item">
@@ -1316,50 +1301,13 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="reveal" style="transition-delay:0.15s;">
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="fname">First Name</label>
-            <input class="form-input" type="text" id="fname" name="fname" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="lname">Last Name</label>
-            <input class="form-input" type="text" id="lname" name="lname" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="email">Email Address</label>
-          <input class="form-input" type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="company">Company / Organization</label>
-          <input class="form-input" type="text" id="company" name="company">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="interest">Area of Interest</label>
-          <select class="form-select" id="interest" name="interest">
-            <option value="">Select one…</option>
-            <option>RNG Project Development</option>
-            <option>Fractional COO Services</option>
-            <option>Gas Upgrade Advisory</option>
-            <option>Investor Due Diligence</option>
-            <option>Feedstock &amp; Offtake Strategy</option>
-            <option>Operations Optimization</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="message">Tell Us About Your Project</label>
-          <textarea class="form-textarea" id="message" name="message" placeholder="Project stage, feedstock type, location, key challenges…"></textarea>
-        </div>
-        <button class="form-submit" type="submit">Send Message →</button>
-        <div id="form-success" style="display:none; font-family:var(--font-body); font-size:13px; color:var(--green-brand); margin-top:8px; letter-spacing:0.06em;">
-          Thank you — we'll be in touch shortly.
-        </div>
-      </form>
+      <div class="contact-inquiry reveal" style="transition-delay:0.15s;">
+        <div class="contact-inquiry-label">Inquiries</div>
+        <p class="contact-inquiry-text">
+          For project inquiries, advisory engagements, or partnership opportunities, reach out directly at <a href="mailto:obi@cowriebioenergy.com">obi@cowriebioenergy.com</a>
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -1425,16 +1373,4 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(function(el) { observer.observe(el); });
-
-  // Form submit (static — hook up to Formspree or Netlify Forms in production)
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('form-success').style.display = 'block';
-    e.target.reset();
-    setTimeout(function() {
-      document.getElementById('form-success').style.display = 'none';
-    }, 5000);
-  }
-</script>
-</body>
-</html>
+</script> 
